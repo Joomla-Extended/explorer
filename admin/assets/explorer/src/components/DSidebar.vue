@@ -4,7 +4,7 @@
             <el-input
                 class="d-sidebar-table-search" 
                 type="text" 
-                placeholder="search table..."
+                placeholder="Buscar tabla..."
                 size="small"
                 v-model="keyword"
                 @input="searchDb" />
