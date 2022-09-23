@@ -9,50 +9,50 @@
         </ul>
         <vue-context ref="menu" :close-on-scroll="true">
             <li style="border-bottom: dashed 1px #ddd;" v-if="!isRoot" @click="compress">
-                <a>Compress to Zip</a>
+                <a>Comprimir a Zip</a>
             </li>
             <li style="border-bottom: dashed 1px #ddd;" v-if="isArchive" @click="extract">
-                <a>Extract to ...</a>
+                <a>Extraer a ...</a>
             </li>
             <li v-if="contextItem.type === 'folder'" @click="newFile">
-                <a>New File</a>
+                <a>Nuevo archivo</a>
             </li>
             <li style="border-bottom: dashed 1px #ddd;" v-if="contextItem.type === 'folder'" @click="newFolder">
-                <a>New Folder</a>
+                <a>Nueva carpeta</a>
             </li>
             <li v-if="contextItem.type === 'folder' && !isRoot" @click="delayCall('renameFolder')">
-                <a>Rename Folder</a>
+                <a>Renombrar carpeta</a>
             </li>
             <li style="border-bottom: dashed 1px #ddd;" v-if="contextItem.type === 'folder' && !isRoot" @click="delayCall('deleteFolder')">
-                <a>Delete Folder</a>
+                <a>Eliminar carpeta</a>
             </li>
             <li v-if="contextItem.type === 'file'" @click="delayCall('openFile')">
-                <a>Open</a>
+                <a>Abrir</a>
             </li>
             <li style="border-bottom: dashed 1px #ddd;" v-if="contextItem.type === 'file'" @click="delayCall('download')">
-                <a>Download File</a>
+                <a>Descargar archivo</a>
             </li>
             <li v-if="contextItem.type === 'file'" @click="delayCall('renameFile')">
-                <a>Rename File</a>
+                <a>Renombrar archivo</a>
             </li>
             <li style="border-bottom: dashed 1px #ddd;" v-if="contextItem.type === 'file'" @click="delayCall('deleteFile')">
-                <a>Delete File</a>
+                <a>Eliminar archivo</a>
             </li>
             <li v-if="contextItem.type === 'folder'" @click="uploadDialog = true">
-                <a>Upload Files</a>
+                <a>Subir archivos</a>
             </li>
             <li style="border-bottom: dashed 1px #ddd;" v-if="contextItem.type === 'folder'" @click="refresh">
-                <a>Refresh</a>
+                <a>Recargar</a>
             </li>
             <li v-if="!isRoot" @click="openPermissionDialog">
-                <a>Permission</a>
+                <a>Permisos</a>
             </li>
             <li v-if="!isRoot" @click="copyPathToClipboard">
-                <a>Copy Relative Path</a>
+                <a>Copiar ruta relativa</a>
             </li>
         </vue-context>
         <el-dialog 
-            title="Upload Files" 
+            title="Subir archivo" 
             :append-to-body="true"
             :destroy-on-close="true"
             :show-close="false"
@@ -77,7 +77,7 @@
         </el-dialog>
         <el-dialog 
             class="permission-dialog"
-            title="Permission" 
+            title="Permisos" 
             width="400px"
             :append-to-body="true"
             :destroy-on-close="true"
@@ -590,7 +590,7 @@ export default {
         refresh() {
             const loading = this.$loading({
                 lock: true,
-                text: 'Refreshing',
+                text: 'Actualizando',
                 spinner: 'el-icon-loading',
                 background: 'rgba(0, 0, 0, 0.7)',
                 customClass: 'compress-loading'

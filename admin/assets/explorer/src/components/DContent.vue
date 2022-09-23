@@ -7,7 +7,7 @@
                     <el-button 
                         size="small"
                         type="success"
-                        @click="openDialogInsert">Insert</el-button>
+                        @click="openDialogInsert">Insertar</el-button>
                     <el-button 
                         size="small" 
                         type="danger"
@@ -27,7 +27,7 @@
                             <el-option :key="'like_start'" :value="'like_start'" :label="'like ...%'"></el-option>
                             <el-option :key="'like_end'" :value="'like_end'" :label="'like %...'"></el-option>
                         </el-select>
-                        <el-input size="small" placeholder="value of column" v-model="filterValue" />
+                        <el-input size="small" placeholder="valor de columna" v-model="filterValue" />
                     </div>
                     <div class="filter-col">
                         <el-button size="small" type="primary" @click="doFilter">Filter</el-button>
@@ -102,7 +102,7 @@
             :show-close="!saving"
             :destroy-on-close="true"
             :custom-class="'dialog-insert'"
-            :title="table + ' - Insert record'"
+            :title="table + ' - Insertar registro'"
             :visible.sync="dialogInsert">
             <form class="form-insert" v-loading="saving">
                 <table>
@@ -130,7 +130,7 @@
                     size="small" 
                     type="primary" 
                     :loading="saving"
-                    @click="insertRecord">Insert</el-button>
+                    @click="insertRecord">Insertar</el-button>
             </span>
         </el-dialog>
         <el-dialog
@@ -240,7 +240,7 @@ export default {
 
         openDialogDelete() {
             if (this.activeRow === -1) {
-                return alert('You need select a record to delete');
+                return alert('Seleccione un registro para eliminar');
             }
 
             this.dialogDelete = true;

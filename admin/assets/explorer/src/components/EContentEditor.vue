@@ -95,7 +95,7 @@ export default {
         setTimeout(() => {
             const loading = this.$loading({
                 lock: true,
-                text: 'Refreshing',
+                text: 'Actualizando',
                 spinner: 'el-icon-loading',
                 background: 'rgba(0, 0, 0, 0.7)',
                 customClass: 'compress-loading'
